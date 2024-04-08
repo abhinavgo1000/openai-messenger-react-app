@@ -11,6 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -122,6 +123,12 @@ export default function PageHeader(props) {
             onClose={handleMobileMenuClose}
         >
         <MenuItem>
+            <IconButton size="large" aria-label="like our website" color="inherit">
+                <FavoriteIcon />
+            </IconButton>
+            <p>Like our website!</p>
+        </MenuItem>
+        <MenuItem>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
             <Badge badgeContent={4} color="error">
                 <MailIcon />
@@ -187,6 +194,9 @@ export default function PageHeader(props) {
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        <IconButton size="large" aria-label="like our website" color="inherit">
+                            <FavoriteIcon />
+                        </IconButton>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="error">
                                 <MailIcon />
