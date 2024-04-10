@@ -59,7 +59,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function PageHeader(props) {
+export default function PageHeader() {
+
+    const [selectedLike, setSelectLike] = React.useState(false);
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
