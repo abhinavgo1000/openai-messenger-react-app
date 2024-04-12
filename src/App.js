@@ -8,7 +8,9 @@ import Fade from '@mui/material/Fade';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import './App.css';
+
 import PageHeader from './components/PageHeader/PageHeader';
+import PageFooter from './components/PageFooter/PageFooter';
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -66,6 +68,7 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
+      <PageFooter></PageFooter>
     </React.Fragment>
   );
 }
