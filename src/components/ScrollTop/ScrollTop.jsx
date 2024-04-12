@@ -36,4 +36,4 @@ export default function ScrollTop(props) {
             </Box>
         </Fade>
     );
-  }
+}
