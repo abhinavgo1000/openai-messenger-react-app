@@ -14,7 +14,7 @@ import ScrollTop from './components/ScrollTop/ScrollTop';
 function App(props) {
   return (
     <React.Fragment>
-      <PageHeader></PageHeader>
+      <PageHeader />
       <Toolbar id="back-to-top-anchor" />
       <Container>
         <Box sx={{ my: 2 }}>
@@ -33,7 +33,7 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
-      <PageFooter></PageFooter>
+      <PageFooter />
     </React.Fragment>
   );
 }
