@@ -64,6 +64,9 @@ export default function DataDialog({ open, handleDialogClose }) {
                 <Button autoFocus onClick={handleDialogClose}>
                     Save changes
                 </Button>
+                <Button autoFocus onClick={handleDialogClose}>
+                    Cancel
+                </Button>
                 </DialogActions>
             </BootstrapDialog>
         </React.Fragment>

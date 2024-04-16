@@ -107,8 +107,8 @@ export default function PageHeader({ handleDialogOpen }) {
         open={isMenuOpen}
         onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleDialogOpen}>Profile</MenuItem>
-            <MenuItem onClick={handleDialogOpen}>My account</MenuItem>
+            <MenuItem onClick={() => handleDialogOpen()}>Profile</MenuItem>
+            <MenuItem onClick={() => handleDialogOpen()}>My account</MenuItem>
         </Menu>
     );
 
@@ -135,7 +135,7 @@ export default function PageHeader({ handleDialogOpen }) {
                 aria-label="like our website" 
                 color="inherit" 
                 onClick={handleLike}>
-                <FavoriteIcon />
+                <FavoriteIcon className={liked ? "highlighted" : undefined}  />
             </IconButton>
             <p>Like our website!</p>
         </MenuItem>
@@ -209,9 +209,8 @@ export default function PageHeader({ handleDialogOpen }) {
                             size="large" 
                             aria-label="like our website" 
                             color="inherit" 
-                            onClick={handleLike}
-                            className={liked ? "highlighted" : undefined}>
-                            <FavoriteIcon />
+                            onClick={handleLike}>
+                            <FavoriteIcon className={liked ? "highlighted" : undefined} />
                         </IconButton>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="error">
