@@ -10,12 +10,23 @@ import './App.css';
 import PageHeader from './components/PageHeader/PageHeader';
 import PageFooter from './components/PageFooter/PageFooter';
 import ScrollTop from './components/ScrollTop/ScrollTop';
+import DataDialog from './components/DataDialog/DataDialog';
 
 function App(props) {
+  const [open, setOpen] = React.useState(false);
+
+    function handleClickOpen() {
+      setOpen(true);
+    }
+    function handleClose() {
+      setOpen(false);
+    }
+
   return (
     <React.Fragment>
-      <PageHeader />
+      <PageHeader handleDialogOpen={handleClickOpen} />
       <Toolbar id="back-to-top-anchor" />
+      {open && <DataDialog open={open} handleDialogClose={handleClose} />}
       <Container>
         <Box sx={{ my: 2 }}>
           {[...new Array(20)]

@@ -59,9 +59,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function PageHeader() {
+export default function PageHeader({ handleDialogOpen }) {
 
-    const [selectedLike, setSelectLike] = React.useState(false);
+    const [liked, setLike] = React.useState(false);
+
+    function handleLike() {
+        setLike((like) => !like);
+    }
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -103,8 +107,8 @@ export default function PageHeader() {
         open={isMenuOpen}
         onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+            <MenuItem onClick={handleDialogOpen}>Profile</MenuItem>
+            <MenuItem onClick={handleDialogOpen}>My account</MenuItem>
         </Menu>
     );
 
@@ -126,7 +130,11 @@ export default function PageHeader() {
             onClose={handleMobileMenuClose}
         >
         <MenuItem>
-            <IconButton size="large" aria-label="like our website" color="inherit">
+            <IconButton 
+                size="large" 
+                aria-label="like our website" 
+                color="inherit" 
+                onClick={handleLike}>
                 <FavoriteIcon />
             </IconButton>
             <p>Like our website!</p>
@@ -197,7 +205,12 @@ export default function PageHeader() {
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton size="large" aria-label="like our website" color="inherit">
+                        <IconButton 
+                            size="large" 
+                            aria-label="like our website" 
+                            color="inherit" 
+                            onClick={handleLike}
+                            className={liked ? "highlighted" : undefined}>
                             <FavoriteIcon />
                         </IconButton>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">

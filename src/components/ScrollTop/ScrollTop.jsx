@@ -4,8 +4,7 @@ import Fade from '@mui/material/Fade';
 
 import './ScrollTop.css'
 
-export default function ScrollTop(props) {
-    const { children, window } = props;
+export default function ScrollTop({ children, window }) {
   
     const trigger = useScrollTrigger({
         target: window ? window() : undefined,
