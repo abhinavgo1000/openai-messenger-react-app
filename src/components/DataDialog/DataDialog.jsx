@@ -25,7 +25,7 @@ export default function DataDialog({ open, handleDialogClose }) {
     return (
         <React.Fragment>
             <BootstrapDialog
-                onClose={handleDialogClose}
+                onClose={() => handleDialogClose()}
                 aria-labelledby="customized-dialog-title"
                 open={open}
             >
@@ -34,7 +34,7 @@ export default function DataDialog({ open, handleDialogClose }) {
                 </DialogTitle>
                 <IconButton
                     aria-label="close"
-                    onClick={handleDialogClose}
+                    onClick={() => handleDialogClose()}
                     sx={{
                         position: 'absolute',
                         right: 8,
@@ -61,10 +61,10 @@ export default function DataDialog({ open, handleDialogClose }) {
                 </Typography>
                 </DialogContent>
                 <DialogActions>
-                <Button autoFocus onClick={handleDialogClose}>
+                <Button autoFocus onClick={() => handleDialogClose()}>
                     Save changes
                 </Button>
-                <Button autoFocus onClick={handleDialogClose}>
+                <Button autoFocus onClick={() => handleDialogClose()}>
                     Cancel
                 </Button>
                 </DialogActions>
