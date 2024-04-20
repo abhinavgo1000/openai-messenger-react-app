@@ -8,8 +8,13 @@ import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
+import Slide from '@mui/material/Slide';
 
 import './DataDialog.css';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -27,6 +32,8 @@ export default function DataDialog({ open, handleDialogClose }) {
             <BootstrapDialog
                 onClose={() => handleDialogClose()}
                 aria-labelledby="customized-dialog-title"
+                TransitionComponent={Transition}
+                keepMounted
                 open={open}
             >
                 <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
