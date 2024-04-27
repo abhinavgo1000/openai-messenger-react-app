@@ -11,6 +11,7 @@ import PageHeader from './components/PageHeader/PageHeader';
 import PageFooter from './components/PageFooter/PageFooter';
 import ScrollTop from './components/ScrollTop/ScrollTop';
 import DataDialog from './components/DataDialog/DataDialog';
+import HomePage from './components/HomePage/HomePage';
 
 function App(props) {
   const [open, setOpen] = React.useState(false);
@@ -29,6 +30,7 @@ function App(props) {
       {open && <DataDialog open={open} handleDialogClose={handleClose} />}
       <Container>
         <Box sx={{ my: 2 }}>
+          <HomePage />
           {[...new Array(20)]
             .map(
               () => `Cras mattis consectetur purus sit amet fermentum.
