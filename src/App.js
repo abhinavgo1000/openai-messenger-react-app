@@ -12,6 +12,8 @@ import PageFooter from './components/PageFooter/PageFooter';
 import ScrollTop from './components/ScrollTop/ScrollTop';
 import DataDialog from './components/DataDialog/DataDialog';
 import HomePage from './components/HomePage/HomePage';
+import MessengerPage from './components/MessengerPage/MessengerPage';
+import AboutMePage from './components/AboutMePage/AboutMePage';
 
 function App(props) {
   const [open, setOpen] = React.useState(false);
@@ -31,14 +33,8 @@ function App(props) {
       <Container>
         <Box sx={{ my: 2 }}>
           <HomePage />
-          {[...new Array(20)]
-            .map(
-              () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-            )
-            .join('\n')}
+          <MessengerPage />
+          <AboutMePage />
         </Box>
       </Container>
       <ScrollTop {...props}>

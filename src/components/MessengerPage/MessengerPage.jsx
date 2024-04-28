@@ -4,12 +4,12 @@ import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 
-import './HomePage.css';
+import './MessengerPage.css';
 
 import TranslateToolbar from '../TranslateToolbar/TranslateToolbar';
-import EmailUpdateForm from '../EmailUpdateForm/EmailUpdateForm';
+import ChatboxArea from '../ChatboxArea/ChatboxArea';
 
-export default function HomePage() {
+export default function MessengerPage() {
 
     return (
         <React.Fragment>
@@ -21,20 +21,20 @@ export default function HomePage() {
                 gutterBottom
                 sx={{ display: { xs: 'none', sm: 'block' } }}
             >      
-                Welcome to the Chatbox Application
+                Welcome to the Messages Page!
             </Typography>
             <Typography
                 variant="h5"
                 gutterBottom
                 sx={{ display: { xs: 'none', sm: 'block' } }}
             >      
-                Type away in the messages page to connect with your loved ones.
+                Start typing your messages right away to communicate with your loved ones. The service is provided by Socket.io and Express. Connect as many clients as you like and start typing in right away!
             </Typography>
             <Card sx={{ my: 2 }}>
                 <CardHeader
-                    title="Some actions you can take on this page" />
+                    title="Type your message in the textbox below." />
                 <CardContent>
-                    <EmailUpdateForm />
+                    <ChatboxArea />
                 </CardContent>
             </Card>
         </React.Fragment>
