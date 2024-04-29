@@ -29,7 +29,7 @@ function App(props) {
     <React.Fragment>
       <PageHeader handleDialogOpen={handleClickOpen} />
       <Toolbar id="back-to-top-anchor" />
-      {open && <DataDialog open={open} handleDialogClose={handleClose} />}
+      <DataDialog open={open} handleDialogClose={handleClose}></DataDialog>
       <Container>
         <Box sx={{ my: 2 }}>
           <HomePage />
