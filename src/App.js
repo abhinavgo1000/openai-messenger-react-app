@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
@@ -20,11 +20,26 @@ import DefaultRedirect from './components/DefaultRedirect/DefaultRedirect';
 function App(props) {
   const [open, setOpen] = React.useState(false);
 
+  const navigate = useNavigate ();
+
     function handleClickOpen() {
       setOpen(true);
     }
+
     function handleClose() {
       setOpen(false);
+    }
+
+    function navigateToHome() {
+      navigate('/home');
+    }
+
+    function navigateToMessenger() {
+      navigate('/messenger');
+    }
+
+    function navigateToAboutMe() {
+      navigate('/about-me');
     }
 
   return (
@@ -34,16 +49,14 @@ function App(props) {
       <DataDialog open={open} handleDialogClose={handleClose}></DataDialog>
       <Container>
         <Box sx={{ my: 2 }}>
-          <BrowserRouter>
-            <div>
-              <Routes>
-                <Route path="/" element={<DefaultRedirect />} />
-                <Route path="/home" element={<HomePage />} />
-                <Route path="/messenger" element={<MessengerPage />} />
-                <Route path="/about-me" element={<AboutMePage />} />
-              </Routes>
-            </div>
-          </BrowserRouter>
+          <div>
+            <Routes>
+              <Route path="/" element={<DefaultRedirect />} />
+              <Route path="/home" element={<HomePage />} />
+              <Route path="/messenger" element={<MessengerPage />} />
+              <Route path="/about-me" element={<AboutMePage />} />
+            </Routes>
+          </div>
         </Box>
       </Container>
       <ScrollTop {...props}>
@@ -51,7 +64,10 @@ function App(props) {
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
-      <PageFooter />
+      <PageFooter
+        homeNav={navigateToHome}
+        messengerNav={navigateToMessenger}
+        aboutMeNav={navigateToAboutMe} />
     </React.Fragment>
   );
 }

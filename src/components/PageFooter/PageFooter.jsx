@@ -8,7 +8,7 @@ import GroupIcon from '@mui/icons-material/Group';
 
 import './PageFooter.css';
 
-export default function PageFooter() {
+export default function PageFooter({ homeNav, messengerNav, aboutMeNav }) {
     const [value, setValue] = React.useState(0);
 
     return (
@@ -20,9 +20,18 @@ export default function PageFooter() {
                     setValue(newValue);
                 }}
             >
-                <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-                <BottomNavigationAction label="GPT Chatbot" icon={<MessageIcon />} />
-                <BottomNavigationAction label="About me" icon={<GroupIcon />} />
+                <BottomNavigationAction 
+                    onClick={homeNav}
+                    label="Home" 
+                    icon={<HomeIcon />} />
+                <BottomNavigationAction 
+                    onClick={messengerNav}
+                    label="GPT Chatbot" 
+                    icon={<MessageIcon />} />
+                <BottomNavigationAction 
+                    onClick={aboutMeNav}
+                    label="About me" 
+                    icon={<GroupIcon />} />
             </BottomNavigation>
         </Box>
     );
