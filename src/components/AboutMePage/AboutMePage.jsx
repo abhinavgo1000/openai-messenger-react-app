@@ -22,14 +22,14 @@ export default function AboutMePage() {
             <Typography
                 variant="h3"
                 gutterBottom
-                sx={{ display: { xs: 'none', sm: 'block' } }}
+                sx={{ display: { xs: 'block', sm: 'block' } }}
             >      
                 Hello everyone!
             </Typography>
             <Typography
                 variant="h5"
                 gutterBottom
-                sx={{ display: { xs: 'none', sm: 'block' } }}
+                sx={{ display: { xs: 'block', sm: 'block' } }}
             >      
                 I am Abhinav Goel, a frontend web developer with a specialization in Angular. I am currently learning React, Node.js and Java to transition to more full stack roles.
             </Typography>

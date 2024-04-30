@@ -19,14 +19,14 @@ export default function HomePage() {
             <Typography
                 variant="h3"
                 gutterBottom
-                sx={{ display: { xs: 'none', sm: 'block' } }}
+                sx={{ display: { xs: 'block', sm: 'block' } }}
             >      
                 Welcome to the Chatbox Application
             </Typography>
             <Typography
                 variant="h5"
                 gutterBottom
-                sx={{ display: { xs: 'none', sm: 'block' } }}
+                sx={{ display: { xs: 'block', sm: 'block' } }}
             >      
                 Type away in the messages page to connect with your loved ones.
             </Typography>

@@ -19,14 +19,14 @@ export default function MessengerPage() {
             <Typography
                 variant="h3"
                 gutterBottom
-                sx={{ display: { xs: 'none', sm: 'block' } }}
+                sx={{ display: { xs: 'block', sm: 'block' } }}
             >      
                 Welcome to the Messages Page!
             </Typography>
             <Typography
                 variant="h5"
                 gutterBottom
-                sx={{ display: { xs: 'none', sm: 'block' } }}
+                sx={{ display: { xs: 'block', sm: 'block' } }}
             >      
                 Start typing your messages right away to communicate with your loved ones. The service is provided by Socket.io and Express. Connect as many clients as you like and start typing in right away!
             </Typography>
