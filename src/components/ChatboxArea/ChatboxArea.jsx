@@ -18,7 +18,7 @@ export default function ChatboxArea() {
                 autoComplete="off"
             >
                 <TextField
-                    id="outlined-helperText"
+                    id="filled-helperText"
                     label="Type your message"
                     placeholder="Type your message here"
                     defaultValue=""

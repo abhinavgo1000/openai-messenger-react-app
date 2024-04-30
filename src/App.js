@@ -16,6 +16,7 @@ import HomePage from './components/HomePage/HomePage';
 import MessengerPage from './components/MessengerPage/MessengerPage';
 import AboutMePage from './components/AboutMePage/AboutMePage';
 import DefaultRedirect from './components/DefaultRedirect/DefaultRedirect';
+import LoginPage from './components/LoginPage/LoginPage';
 
 function App(props) {
   const [open, setOpen] = React.useState(false);
@@ -55,6 +56,7 @@ function App(props) {
               <Route path="/home" element={<HomePage />} />
               <Route path="/messenger" element={<MessengerPage />} />
               <Route path="/about-me" element={<AboutMePage />} />
+              <Route path="/login" element={<LoginPage />} />
             </Routes>
           </div>
         </Box>
