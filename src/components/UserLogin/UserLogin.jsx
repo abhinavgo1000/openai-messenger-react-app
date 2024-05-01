@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import FormGroup from '@mui/material/FormGroup';
@@ -9,6 +10,12 @@ import Button from '@mui/material/Button';
 import './UserLogin.css';
 
 export default function UserLogin() {
+
+    const navigate = useNavigate ();
+
+    function navigateToSignup() {
+        navigate('/new-user');
+    }
 
     return (
         <React.Fragment>
@@ -54,6 +61,7 @@ export default function UserLogin() {
                 <div>
                     <Button variant="contained">Sign In</Button>
                 </div>
+                <p>New User? <Button variant="text" onClick={navigateToSignup}>Create a new account</Button></p>
             </Box>
         </React.Fragment>
     );
