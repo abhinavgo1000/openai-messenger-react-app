@@ -26,6 +26,7 @@ export default function UserLogin() {
                         error
                         id="filled-error-helper-text"
                         label="Email"
+                        type="email"
                         placeholder="Ex. pat@example.com"
                         defaultValue=""
                         helperText="Please enter a valid email address"
@@ -38,6 +39,7 @@ export default function UserLogin() {
                         error
                         id="filled-error-helper-text"
                         label="Password"
+                        type="password"
                         placeholder="Enter your password"
                         defaultValue=""
                         helperText="Please enter a valid password"
