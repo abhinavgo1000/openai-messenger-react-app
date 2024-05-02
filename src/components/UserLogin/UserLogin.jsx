@@ -11,7 +11,7 @@ import './UserLogin.css';
 
 export default function UserLogin() {
 
-    const navigate = useNavigate ();
+    const navigate = useNavigate();
 
     function navigateToSignup() {
         navigate('/new-user');

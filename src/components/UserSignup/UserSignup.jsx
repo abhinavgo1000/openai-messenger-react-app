@@ -27,7 +27,7 @@ export default function UserSignup() {
         setOpen(false);
     };
 
-    const navigate = useNavigate ();
+    const navigate = useNavigate();
 
     function navigateToLogin() {
         navigate('/login');

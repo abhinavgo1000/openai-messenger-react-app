@@ -70,7 +70,7 @@ export default function NewProfileForm() {
             : theme.palette.secondary.light,
       }));
 
-    const navigate = useNavigate ();
+    const navigate = useNavigate();
 
     function navigateToLogin() {
         navigate('/login');
