@@ -1,0 +1,4 @@
+.toolbar-align {
+    display: grid;
+    justify-content: right;
+}

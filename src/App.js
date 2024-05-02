@@ -20,6 +20,7 @@ import LoginPage from './components/LoginPage/LoginPage';
 import NewUserPage from './components/NewUserPage/NewUserPage';
 import NewProfilePage from './components/NewProfilePage/NewProfilePage';
 import NewUserSuccessPage from './components/NewUserSuccessPage/NewUserSuccessPage';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 function App(props) {
   const [open, setOpen] = React.useState(false);
@@ -63,6 +64,7 @@ function App(props) {
               <Route path="/new-user" element={<NewUserPage />} />
               <Route path="/new-profile" element={<NewProfilePage />} />
               <Route path="/new-user-success" element={<NewUserSuccessPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </div>
         </Box>
