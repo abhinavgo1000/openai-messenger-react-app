@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -8,12 +8,19 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Button from '@mui/material/Button';
 
-import './AboutMePage.css';
+import './NewUserSuccessPage.css';
 
 import TranslateToolbar from '../TranslateToolbar/TranslateToolbar';
 
-export default function AboutMePage() {
+export default function NewUserSuccessPage() {
+
+    const navigate = useNavigate();
+
+    function navigateToLogin() {
+        navigate('/login');
+    }
 
     return (
         <React.Fragment>
@@ -25,26 +32,31 @@ export default function AboutMePage() {
                 gutterBottom
                 sx={{ display: { xs: 'block', sm: 'block' } }}
             >      
-                Hello everyone!
+                Success! Your account is created!
             </Typography>
             <Typography
                 variant="h5"
                 gutterBottom
                 sx={{ display: { xs: 'block', sm: 'block' } }}
             >      
-                I am Abhinav Goel, a frontend web developer with a specialization in Angular. I am currently learning React, Node.js and Java to transition to more full stack roles.
-            </Typography>
-            <Typography
-                variant="p"
-                gutterBottom
-                sx={{ display: { xs: 'none', sm: 'block' } }}
-            >
-                Please find the links to my Github and LinkedIn below.
+                Now you can sign in and start connecting to your loved ones. Navigate to the login page and get connected right away!
             </Typography>
             <Card sx={{ my: 2 }}>
                 <CardHeader
-                    title="Links to my Github and LinkedIn" />
+                    title="Some further actions you can take" />
                 <CardContent>
+                    <Accordion>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1-content"
+                            id="panel1-header"
+                        >
+                            Login
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Button variant="text" onClick={navigateToLogin}>Go to Login</Button>
+                        </AccordionDetails>
+                    </Accordion>
                     <Accordion>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}

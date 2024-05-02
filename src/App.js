@@ -19,6 +19,7 @@ import DefaultRedirect from './components/DefaultRedirect/DefaultRedirect';
 import LoginPage from './components/LoginPage/LoginPage';
 import NewUserPage from './components/NewUserPage/NewUserPage';
 import NewProfilePage from './components/NewProfilePage/NewProfilePage';
+import NewUserSuccessPage from './components/NewUserSuccessPage/NewUserSuccessPage';
 
 function App(props) {
   const [open, setOpen] = React.useState(false);
@@ -61,6 +62,7 @@ function App(props) {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/new-user" element={<NewUserPage />} />
               <Route path="/new-profile" element={<NewProfilePage />} />
+              <Route path="/new-user-success" element={<NewUserSuccessPage />} />
             </Routes>
           </div>
         </Box>
