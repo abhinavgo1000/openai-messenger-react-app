@@ -27,7 +27,7 @@ export default function UserLogin() {
                 noValidate
                 autoComplete="off"
             >
-                <div>
+                <Box>
                     <TextField
                         required
                         error
@@ -39,8 +39,8 @@ export default function UserLogin() {
                         helperText="Please enter a valid email address"
                         variant="filled"
                     />
-                </div>
-                <div>
+                </Box>
+                <Box>
                     <TextField
                         required
                         error
@@ -52,15 +52,15 @@ export default function UserLogin() {
                         helperText="Please enter a valid password"
                         variant="filled"
                     />
-                </div>
-                <div className="checkbox-margin">
+                </Box>
+                <Box className="checkbox-margin">
                     <FormGroup>
                         <FormControlLabel control={<Checkbox />} label="Remember my credentials" />
                     </FormGroup>
-                </div>
-                <div>
+                </Box>
+                <Box>
                     <Button variant="contained">Sign In</Button>
-                </div>
+                </Box>
                 <p>New User? <Button variant="text" onClick={navigateToSignup}>Create a new account</Button></p>
             </Box>
         </React.Fragment>

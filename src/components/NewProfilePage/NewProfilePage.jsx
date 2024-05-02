@@ -4,12 +4,12 @@ import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 
-import './NewUserPage.css';
-
 import TranslateToolbar from '../TranslateToolbar/TranslateToolbar';
-import UserSignup from '../UserSignup/UserSignup';
+import NewProfileForm from '../NewProfileForm/NewProfileForm';
 
-export default function NewUserPage() {
+import './NewProfilePage.css';
+
+export default function NewProfilePage() {
 
     return (
         <React.Fragment>
@@ -21,20 +21,20 @@ export default function NewUserPage() {
                 gutterBottom
                 sx={{ display: { xs: 'block', sm: 'block' } }}
             >      
-                Create a new account
+                Now enter your profile details
             </Typography>
             <Typography
                 variant="h5"
                 gutterBottom
                 sx={{ display: { xs: 'block', sm: 'block' } }}
             >      
-                Enter your credentials below to register and get started.
+                Tell us a bit more about you so that we can know you better.
             </Typography>
             <Card sx={{ my: 2 }}>
                 <CardHeader
-                    title="Enter the details for your new account" />
+                    title="Enter your profile details" />
                 <CardContent>
-                    <UserSignup />
+                    <NewProfileForm />
                 </CardContent>
             </Card>
         </React.Fragment>

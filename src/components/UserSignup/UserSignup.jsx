@@ -7,16 +7,47 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Switch from '@mui/material/Switch';
 import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 import './UserSignup.css';
 
 export default function UserSignup() {
+    const [open, setOpen] = React.useState(false);
+
+    const handleClick = () => {
+        setOpen(true);
+    };
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpen(false);
+    };
 
     const navigate = useNavigate ();
 
     function navigateToLogin() {
         navigate('/login');
     }
+
+    const action = (
+        <React.Fragment>
+            <Button color="secondary" size="small" onClick={handleClose}>
+                UNDO
+            </Button>
+            <IconButton
+                size="small"
+                aria-label="close"
+                color="inherit"
+                onClick={handleClose}
+            >
+                <CloseIcon fontSize="small" />
+            </IconButton>
+        </React.Fragment>
+    );
 
     return (
         <React.Fragment>
@@ -28,7 +59,7 @@ export default function UserSignup() {
                 noValidate
                 autoComplete="off"
             >
-                <div>
+                <Box>
                     <TextField
                         required
                         error
@@ -40,8 +71,8 @@ export default function UserSignup() {
                         helperText="Please enter a valid name"
                         variant="filled"
                     />
-                </div>
-                <div>
+                </Box>
+                <Box>
                     <TextField
                         required
                         error
@@ -53,8 +84,8 @@ export default function UserSignup() {
                         helperText="Please enter a valid username"
                         variant="filled"
                     />
-                </div>
-                <div>
+                </Box>
+                <Box>
                     <TextField
                         required
                         error
@@ -66,8 +97,8 @@ export default function UserSignup() {
                         helperText="Please enter a valid phone number"
                         variant="filled"
                     />
-                </div>
-                <div>
+                </Box>
+                <Box>
                     <TextField
                         required
                         error
@@ -79,8 +110,8 @@ export default function UserSignup() {
                         helperText="Please enter a valid email address"
                         variant="filled"
                     />
-                </div>
-                <div>
+                </Box>
+                <Box>
                     <TextField
                         required
                         error
@@ -92,27 +123,34 @@ export default function UserSignup() {
                         helperText="Please enter a valid password"
                         variant="filled"
                     />
-                </div>
-                <div className="checkbox-margin">
+                </Box>
+                <Box className="checkbox-margin">
                     <FormGroup>
                         <FormControlLabel 
-                            control={<Checkbox />} 
+                            control={<Checkbox onClick={handleClick} />} 
                             label="I accept the Terms and Conditions" />
                     </FormGroup>
-                </div>
-                <div className="toggle-margin">
+                </Box>
+                <Snackbar
+                    open={open}
+                    autoHideDuration={6000}
+                    onClose={handleClose}
+                    message="The form can now be submitted"
+                    action={action}
+                />
+                <Box className="toggle-margin">
                     <FormGroup>
                         <FormControlLabel
                             control={<Switch />}
                             label="Sign me up for email notifications about my account" />
                     </FormGroup>
-                </div>
-                <div>
+                </Box>
+                <Box>
                     <Button variant="contained">Create Account</Button>
                     <span className="cancel-button">
                         <Button variant="outlined" onClick={navigateToLogin}>Cancel</Button>
                     </span>
-                </div>
+                </Box>
                 <p>Already have an account? 
                     <Button variant="text" onClick={navigateToLogin}>Sign in</Button>
                 </p>
